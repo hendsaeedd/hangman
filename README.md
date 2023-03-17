@@ -24,4 +24,4 @@ Tailwindcss<br/>
 Vite
 
 ### Screenshot
-![](./screenshot.png)
+![](./screenshot.jpeg)
