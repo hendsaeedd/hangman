@@ -7,8 +7,7 @@ This is a simple implementation of the classic Hangman game using TypeScript. Th
 Random word selection<br/>
 Graphic representation of the Hangman<br/>
 Incorrect guesses counter<br/>
-Win/Lose conditions<br/>
-Sound effects
+Win/Lose conditions
 
 ### How to Play
 Clone or download the repository<br/>
