@@ -1,0 +1,67 @@
+import styles from '../styles/Keyword.module.css';
+
+const KEYS = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+]
+
+type KeyboardProps = {
+  disabled?: boolean
+  activeLetters: string[]
+  inactiveLetters: string[]
+  addGuessedLetter: (letter: string) => void
+}
+
+export default function Keyboard({
+  activeLetters,
+  inactiveLetters,
+  addGuessedLetter,
+  disabled = false,
+}: KeyboardProps) {
+  return (
+    <div className="grid grid-cols-9 gap-2 sm:grid-cols-9 sm:gap-8 m-4 mb-24"
+      
+    >
+      {KEYS.map(key => {
+        const isActive = activeLetters.includes(key)
+        const isInactive = inactiveLetters.includes(key)
+        return (
+          <button
+            onClick={() => addGuessedLetter(key)}
+            className={`${styles.btn} ${isActive ? styles.active : ""} ${
+              isInactive ? styles.inactive : ""
+            }`}
+            disabled={isInactive || isActive || disabled}
+            key={key}
+          >
+            {key}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
